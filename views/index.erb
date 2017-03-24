@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Joeyyyyy</title>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- custom css -->
+    <link rel="stylesheet" href=" css/style.css" type="text/css">
+    <!-- custom JS -->
+    <script src="js/script.js"></script>
+    <!-- Josefin+Slab -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+    <!--Clicker Script-->
+    <link href="https://fonts.googleapis.com/css?family=Clicker+Script" rel="stylesheet">
+    <script>
+    // count the characters of the users input every time they type
+       function countChar(val) {
+    count=val.value.split(" ").length
+    
+    $("#count").html(count) 
+        if (count>25){
+          val.disabled=true; //stops you from typing
+          $("#sub_button").hide() //removes the submit b
+        }
+     
+      };
+    </script>
+  </head>
+  <body>
+    
+    <div class="inputText">
+      <h1>How you doin'?</h1>
+      <h3>Input something to<span style="font-family: 'Clicker Script', cursive;"> Smartify</span></h3>
+        <form method="post" action="/result">
+  <h3>Do not exceed 25 words</h3>
+  <h3>Word Count:<span id="count"></span></h3>
+        <input type="text" id="text_input" name="string" autofocus onkeyup="countChar(this)"><br>
+        <button id="sub_button" type="submit" value="submit" >Submit</button>
+      </form>
+    </div>
+    <img src ="hyd.gif" height="25%" width="25%">
+    <div class="inputText">
+      <h3>Can't think of anything that needs to sound smarter? Try this from our president:</h3>
+    <h3>"<cite><%= @trump.msg %></cite>"<br><b>- Donald J. Trump</b></h3>
+    </div>
+  </body>
+</html>
